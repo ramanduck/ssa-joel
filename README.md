@@ -1,4 +1,4 @@
-# SDE2 - Round 2 - Shiva (8th November 2023)
+# SDE1 - Round 2 - Shiva (8th November 2023)
 
 ### Setup Docker
 https://docs.docker.com/desktop/ </br>
