@@ -1,4 +1,4 @@
-# SDE2 - Round 2 - Rohit Bhagat (10th November 2023)
+# SDE1 - Round 2 - Aditya Sangle (14th November 2023)
 
 ### Setup Docker
 https://docs.docker.com/desktop/ </br>
