@@ -1,4 +1,4 @@
-# SDE1 - Round 2 - Aman Thapar (21st November 2023)
+# SDE1 - Round 2 - Himanshu Deshmukh (21st November 2023)
 
 ### Setup Docker
 https://docs.docker.com/desktop/ </br>
