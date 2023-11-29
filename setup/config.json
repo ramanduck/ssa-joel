@@ -20,6 +20,7 @@
             },
 
             "s3":{
+                "file_name_date_prefix": "%d_%m_%Y",
                 "file_name_suffix": "_report.csv",
                 "bucket_name": "mt--reports"
             },

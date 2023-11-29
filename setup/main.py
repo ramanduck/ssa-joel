@@ -25,7 +25,7 @@ def execute(key):
 
         # Prepare CSV report named with today's prefix
         today = date.today() 
-        today_str = today.strftime("%d_%m_%Y")
+        today_str = today.strftime(config['reports']['mt--reports']['s3']['file_name_date_prefix'])
         file_name = f'{today_str}'+config['reports']['mt--reports']['s3']['file_name_suffix']
         data.to_csv(file_name, index=False)
 
