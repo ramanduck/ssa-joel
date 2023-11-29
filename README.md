@@ -61,3 +61,9 @@ activate
 ```
 pip install -r requirements.txt
 ```
+### Run the main.py file & enter the decryption key and so that scheduler starts
+The scheduler considers the local windows machine time
+```
+python main.py
+```
+![Alt text](image-4.png)
