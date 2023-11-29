@@ -13,9 +13,9 @@ Criteria:
 
 ### The solution has been implemented to run on Windows machines
 
-- The solution uses AWS RDS (for Postgres & MySQL DBs), AWS S3 (for file upload) & AWS SES (for notifying system & application level errors & exceptions through emails).
+- The solution uses AWS RDS (for Postgres & MySQL DBs), AWS S3 (for file upload) & AWS SES (for notifying system & application level errors through emails).
 - Dedicated modular & reusable functions to connect with end systems are implemented.
--  Exceptions are handled throughout the workflow & any application level errors & exceptions are notified to users through emails.
+-  Exceptions are handled throughout the workflow & any application level errors that hinders/stops the flow execution are notified to users through emails.
 - All values in the environment file are encrypted using a generated key (used cryptography library Fernet - Symmetric Encryption).
 - Dynamic properties like DB queries, S3 bucket details, scheduler date & time can be changed whenever neeed, are present under config.json
 - Pylance linter has been used in VSCode IDE setup.
