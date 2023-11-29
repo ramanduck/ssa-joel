@@ -7,6 +7,7 @@ import json
 from getpass import getpass
 import s3
 import schedule
+import logger as log
 
 def execute(key):
     try:
@@ -37,6 +38,8 @@ def execute(key):
 
     except Exception as e:
         print(e)
+        log.logerror('ISSUE: Monthly Lessons Completion Report')
+        log.logerror(traceback.format_exc())
         ses.send_email(key, subject='ISSUE: Monthly Lessons Completion Report', message=traceback.format_exc())
 
 def process_data(active_users, lcomp_data):
@@ -67,11 +70,14 @@ def check_date(key):
         execute(key)
 
 if __name__ == "__main__":
+    log.loginfo('Starting scheduler...')
     # On running the main script, it asks for decryption key to decrypt the env file values
     # The entering key in the command prompt won't be visible as the user types it
     key = getpass("Enter decryption key: ")
+    log.loginfo('Received decryption key, scheduling job...')
     # Scheduling an every day job at 10am to check if it is Day 1 of the month.
     schedule.every().day.at(config['reports']['mt--reports']['scheduled_time']).do(check_date, key)
+    log.loginfo('Scheduler Started')
     while True:
         schedule.run_pending()
         sleep(1)

@@ -6,6 +6,7 @@ import mysql.connector as mysql
 import pandas as pd
 import traceback
 import ses
+import logger as log
 
 load_dotenv()
 
@@ -25,6 +26,8 @@ def get_postgres_connection_object(key):
 
     except Exception as e:
         print(e)
+        log.logerror('Postgres DB Connectivity Error')
+        log.logerror(traceback.format_exc())
         ses.send_email(key, subject='Postgres DB Connectivity Error', message=traceback.format_exc())
 
 def get_mysql_connection_object(key):
@@ -43,6 +46,8 @@ def get_mysql_connection_object(key):
 
     except Exception as e:
         print(e)
+        log.logerror('MYSQL DB Connectivity Error')
+        log.logerror(traceback.format_exc())
         ses.send_email(key, subject='MYSQL DB Connectivity Error', message=traceback.format_exc())
 
 def select_query(query, database_connection_object):

@@ -2,6 +2,8 @@ import boto3
 import os
 from secure import decrypt
 from dotenv import load_dotenv
+import logger as log
+import traceback
 
 load_dotenv()
 
@@ -44,3 +46,5 @@ def send_email(key, subject, message):
 
     except Exception as e:
         print(e)
+        log.logerror('AWS SES Service Failure')
+        log.logerror(traceback.format_exc())

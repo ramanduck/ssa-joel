@@ -3,6 +3,7 @@ from secure import decrypt
 import os, traceback
 from dotenv import load_dotenv
 import ses
+import logger as log
 
 load_dotenv()
 
@@ -19,4 +20,6 @@ def upload_to_s3(key, bucket_name, file_name):
     
     except Exception as e:
         print(e)
+        log.logerror('AWS S3 Connectivity/File Upload Error')
+        log.logerror(traceback.format_exc())
         ses.send_email(key, subject='AWS S3 Connectivity/File Upload Error', message=traceback.format_exc())
