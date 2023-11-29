@@ -24,13 +24,26 @@ Criteria:
 
 ## Solution:
 
-- Mindtickle active users list is pulled from Postgres DB
+- Mindtickle active users list is pulled from Postgres DB 
 
 ![Alt text](image.png)
 
+- Lessons Completion records are pulled from MySQL DB
+
+As per the image: Considering today (29/11/2023) as the Day 1 of the month, added some sample data that can fall under the filter of past 30 days
+
+![Alt text](image-1.png)
+
+- Using Pandas dataframe logics over these data, the list of active users & their number of completed courses in the last 30 days are filtered.
+
+- An AWS S3 bucket is configured to upload the data in csv format. The CSV report is prepared & upload to the S3 bucket.
+
+![Alt text](image-2.png)
+
+![Alt text](image-3.png)
 
 ## Steps to run the solution:
-### Copy the environment file and enter the values to be used:
+### Copy the valid encrypted values to the environment file
 ```
 cd setup
 copy .env.example .env
