@@ -34,7 +34,7 @@ As per the image: Considering today (29/11/2023) as the Day 1 of the month, adde
 
 ![Alt text](image-1.png)
 
-- Using Pandas dataframe logics over these data, the list of active users & their number of completed courses in the last 30 days are filtered.
+- Using Pandas filtering dataframe logics were applied over these data, the list of active users & their number of completed courses in the last 30 days are filtered.
 
 - An AWS S3 bucket is configured to upload the data in csv format. The CSV report is prepared & upload to the S3 bucket.
 
