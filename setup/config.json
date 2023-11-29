@@ -1,0 +1,31 @@
+{
+    "reports":{
+        "mt--reports":{
+            "postgres":{
+                "get_active_users": "SELECT * FROM mindtickle_users WHERE active_status='active'"
+            },
+            "mysql":{
+                "get_lessons_completion": "SELECT * FROM lesson_completion"
+            },
+            "join":{
+                "id": "user_id"
+            },
+            "condition":{
+                "id": "completion_date",
+                "before": 30,
+                "metric": "D"
+            },
+            "aliases":{
+                "lesson_id": "no_lessons_completed"
+            },
+
+            "s3":{
+                "file_name_suffix": "_report.csv",
+                "bucket_name": "mt--reports"
+            },
+
+            "scheduled_time": "10:00",
+            "scheduled_day_of_month": 1
+        }
+}
+}

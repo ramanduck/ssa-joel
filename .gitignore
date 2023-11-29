@@ -3,3 +3,4 @@ venv/
 *.env
 Dockerfile
 requirements.txt
+__pycache__
