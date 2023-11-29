@@ -75,3 +75,7 @@ python main.py
 ### Sample Logs
 
 ![Alt text](image-7.png)
+
+### AWS IAM user created for the project with FullAccess to S3 & SES
+
+![Alt text](image-5.png)
